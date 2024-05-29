@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: prom-grafana
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce
+    username: app-user
+    password: pod@#6321P #incorrect sample password, use your own :)
+    driverClassName: org.postgresql.Driver
+  sql:
+    init:
+      platform: postgres
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+management:
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    prometheus:
+      enabled: true
