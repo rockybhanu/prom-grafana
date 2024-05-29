@@ -1,0 +1,11 @@
+{
+  "product": {
+    "id": "64d37d5e-8af6-4449-99af-7b112983415c"
+  },
+  "quantity": 1,
+  "totalPrice": 20.50,
+  "customerName": "Ramanuj",
+  "customerAddress": "Malad West",
+  "customerEmail": "ramanuj.in@gmail.com",
+  "customerPhone": "9004481082"
+}
