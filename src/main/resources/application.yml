@@ -7,9 +7,9 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:postgresql://localhost:5432/ecommerce
-    username: app-user
-    password: pod@#6321P #incorrect sample password, use your own :)
+    url: jdbc:postgresql://postgres.postgres.svc.cluster.local:5432/prom_grafana
+    username: ramanuj
+    password: prom@6321P #incorrect sample password, use your own - Ramanuj :)
     driverClassName: org.postgresql.Driver
   sql:
     init:
