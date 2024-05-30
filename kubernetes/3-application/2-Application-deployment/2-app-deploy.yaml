@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: prom-grafana
-          image: ramanujd/prom-grafana
+          image: ramanujd/prom-grafana-app
           ports:
             - containerPort: 8080
