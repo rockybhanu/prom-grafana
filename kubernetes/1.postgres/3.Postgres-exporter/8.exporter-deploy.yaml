@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exporter-deploy
+  namespace: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: exporter-deploy
+  template:
+    metadata:
+      labels:
+        app: exporter-deploy
+    spec:
+      containers:
+        - name: exporter-deploy
+          image: prometheuscommunity/postgres-exporter:v0.15.0
+          env:
+            - name: DATA_SOURCE_URI
+              valueFrom:
+                configMapKeyRef:
+                  name: exporter-config
+                  key: DATA_SOURCE_URI
+            - name: DATA_SOURCE_USER
+              valueFrom:
+                secretKeyRef:
+                  name: exporter-secret
+                  key: username
+            - name: DATA_SOURCE_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: exporter-secret
+                  key: password
+          ports:
+            - containerPort: 9187

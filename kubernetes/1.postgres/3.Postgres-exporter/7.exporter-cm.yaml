@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: exporter-config
+  namespace: postgres
+data:
+  DATA_SOURCE_URI: "postgres:5432/prom_grafana?sslmode=disable"

@@ -1,0 +1,1 @@
+kubectl -n monitoring create configmap prometheus-scrape-configs --from-file=prometheus.yml

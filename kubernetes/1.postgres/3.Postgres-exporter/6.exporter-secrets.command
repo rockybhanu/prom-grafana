@@ -1,0 +1,1 @@
+kubectl create secret generic exporter-secret -n postgres --from-literal=username=ramanuj --from-literal=password=prom@6321P

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prom-deployment
+  labels:
+    app: prom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prom
+  template:
+    metadata:
+      labels:
+        app: prom
+    spec:
+      securityContext:
+        fsGroup: 1000
+      containers:
+        - name: prometheus
+          image: prom/prometheus:v2.52.0
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+          args:
+            - '--config.file=/etc/prometheus/prometheus.yml'
+            - '--storage.tsdb.path=/prometheus'
+          ports:
+            - containerPort: 9090
+          volumeMounts:
+            - name: prom-config-volume
+              mountPath: /etc/prometheus/
+            - name: prom-volume
+              mountPath: /prometheus
+      volumes:
+        - name: prom-config-volume
+          configMap:
+            name: prometheus-scrape-configs
+        - name: prom-volume
+          persistentVolumeClaim:
+            claimName: prom-pv-claim
