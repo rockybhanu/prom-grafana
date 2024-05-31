@@ -38,6 +38,15 @@ This project serves as a simple example of setting up end-to-end resources in Ku
 - Adjust storage class names and ingress class names as per your cluster configuration.
 - Ensure all deployments are executed in the specified order for proper setup.
 
+### In production env, For this type of setup you might consider to improve with -
+
+- Ansible-based Linux Automation
+- OIDC based auth for apps
+- Network Policy for all apps
+- Use of mTLS for app
+- Helm chart-based deployment
+- ArgoCD for pull-based approach
+
 ---
 
 This README provides an overview of the setup process for deploying and visualizing metrics using Spring Boot, Kubernetes, Prometheus, and Grafana.
