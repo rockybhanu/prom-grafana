@@ -3,11 +3,8 @@ spring:
     name: prom-grafana
   jpa:
     database: POSTGRESQL
-    show-sql: true
-    hibernate:
-      ddl-auto: update
   datasource:
-    url: jdbc:postgresql://postgres.postgres.svc.cluster.local:5432/prom_grafana
+    url:
     username: ramanuj
     password: prom@6321P #incorrect sample password, use your own - Ramanuj :)
     driverClassName: org.postgresql.Driver
