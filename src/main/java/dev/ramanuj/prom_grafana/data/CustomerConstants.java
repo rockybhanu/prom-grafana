@@ -1,7 +1,6 @@
 package dev.ramanuj.prom_grafana.data;
 
 public class CustomerConstants {
-
     public static final String[] ACCOUNT_STATUSES = {"Active", "Inactive", "Suspended", "Pending"};
     public static final String[] ACCOUNT_LOCK_REASONS = {"None", "Multiple Failed Logins", "Suspicious Activity"};
     public static final String[] CUSTOMER_SEGMENTS = {"Retail", "Wholesale", "Enterprise"};
